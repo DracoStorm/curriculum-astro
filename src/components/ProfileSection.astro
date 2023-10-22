@@ -9,7 +9,7 @@ const { title, icon, elements } = Astro.props;
 
 <section>
     <h3 class="title">
-        <i class="material-icons icons">{icon}</i>
+        <i class="material-icons icons">{icon + "\u00A0"}</i>
         {title}
     </h3>
     <ul>
@@ -18,9 +18,25 @@ const { title, icon, elements } = Astro.props;
 </section>
 
 <style>
-    ul {
+    @keyframes li-hover {
+        to {
+            transform: scale(1.05);
+            color: #151515;
+            background-color: var(--main-accent-color);
+        }
+    }
+    section {
+        margin-bottom: 5rem;
+        padding: 2rem;
         border-radius: 1.5rem;
-        background-color: #181818;
+    }
+    section:hover {
+        background-color: #0003;
+    }
+    h3 {
+        margin: 3rem 0;
+    }
+    ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -29,8 +45,11 @@ const { title, icon, elements } = Astro.props;
         list-style: none;
     }
     li {
-        border: 0.15rem whitesmoke solid;
+        border: 0.11rem whitesmoke solid;
         border-radius: 0.6rem;
         padding: 0.5rem 1rem;
+    }
+    li:hover {
+        animation: li-hover 0.5s forwards;
     }
 </style>
