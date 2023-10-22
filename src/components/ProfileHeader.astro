@@ -8,17 +8,27 @@ interface Props {
 const { name, occupation, photo } = Astro.props;
 ---
 
-<header class="container">
-    <img src={photo} alt="name" />
-    <h1 class="title">{name}</h1>
-    <h2 class="title">{occupation}</h2>
+<header>
+    <div class="container">
+        <img src={photo} alt="name" />
+        <h1 class="title">{name}</h1>
+        <h2 class="title">{occupation}</h2>
+    </div>
 </header>
 
 <style>
+    @keyframes profile {
+        to {
+            transform: scale(1.05);
+        }
+    }
     img {
+        object-fit: cover;
         margin: 3rem 0;
-        width: 15rem;
+        width: 18rem;
+        height: 18rem;
         border-radius: 50%;
+        border: var(--main-accent-color) 0.4rem solid;
     }
     h1 {
         font-size: 4rem;
@@ -30,5 +40,23 @@ const { name, occupation, photo } = Astro.props;
         font-style: oblique;
         text-align: center;
         margin-bottom: 4rem;
+    }
+    div {
+        border-radius: 1.5rem;
+        background: linear-gradient(
+            0deg,
+            #ffffff10 0%,
+            #ffffff05 80%,
+            #fff0 100%
+        );
+    }
+    header {
+        padding: 0 5rem;
+    }
+    div:hover {
+        animation: profile 0.5s forwards;
+    }
+    header {
+        margin-bottom: 5rem;
     }
 </style>

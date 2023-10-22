@@ -10,7 +10,7 @@ const { email, phone, github } = Astro.props;
 
 <footer>
     <a href={"mailto:" + email}> <i class="material-icons icons">mail</i></a>
-    <a href={"tel:+" + phone}> <i class="material-icons icons">phone</i></a>
+    <a href={"tel:" + phone}> <i class="material-icons icons">phone</i></a>
     <a href={github}>
         <svg viewBox="0 0 16 16" version="1.1">
             <path
@@ -21,20 +21,38 @@ const { email, phone, github } = Astro.props;
 </footer>
 
 <style>
+    @keyframes icon-anim {
+        to {
+            transform: translateY(1rem);
+        }
+    }
     footer {
         display: flex;
         justify-content: center;
         gap: 2rem;
         margin-top: 5vh;
+        margin-bottom: 4vh;
     }
     a {
+        display: block;
         color: whitesmoke;
         font-size: 3rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: linear-gradient(
+            0deg,
+            #ffffff10 0%,
+            #ffffff05 80%,
+            #fff0 100%
+        );
     }
     svg {
         position: relative;
         top: 0.05em;
         height: 0.9em;
-        fill: whitesmoke;
+        fill: var(--main-accent-color);
+    }
+    a:hover {
+        animation: icon-anim 0.5s 0.1s forwards;
     }
 </style>

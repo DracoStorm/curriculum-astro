@@ -21,17 +21,26 @@ const { title, icon, elements } = Astro.props;
     @keyframes li-hover {
         to {
             transform: scale(1.05);
-            color: #151515;
+            color: var(--main-bg-color);
             background-color: var(--main-accent-color);
+        }
+    }
+
+    @keyframes sec-hover {
+        to {
+            transform: translateY(1rem);
         }
     }
     section {
         margin-bottom: 5rem;
         padding: 2rem;
         border-radius: 1.5rem;
-    }
-    section:hover {
-        background-color: #0003;
+        background: linear-gradient(
+            0deg,
+            #ffffff10 0%,
+            #ffffff05 80%,
+            #fff0 100%
+        );
     }
     h3 {
         margin: 3rem 0;
@@ -51,5 +60,8 @@ const { title, icon, elements } = Astro.props;
     }
     li:hover {
         animation: li-hover 0.5s forwards;
+    }
+    section:hover {
+        animation: sec-hover 0.5s ease-out both;
     }
 </style>
