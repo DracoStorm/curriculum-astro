@@ -1,0 +1,36 @@
+---
+interface Props {
+    title: string;
+    icon: string;
+    elements: string[];
+}
+const { title, icon, elements } = Astro.props;
+---
+
+<section>
+    <h3 class="title">
+        <i class="material-icons icons">{icon}</i>
+        {title}
+    </h3>
+    <ul>
+        {elements.map((e) => <li>{e}</li>)}
+    </ul>
+</section>
+
+<style>
+    ul {
+        border-radius: 1.5rem;
+        background-color: #181818;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        list-style: none;
+    }
+    li {
+        border: 0.15rem whitesmoke solid;
+        border-radius: 0.6rem;
+        padding: 0.5rem 1rem;
+    }
+</style>

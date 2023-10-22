@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProfileHeader from "../components/ProfileHeader.astro";
+import ContactFooter from "../components/ContactFooter.astro";
+import ProfileSection from "../components/ProfileSection.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<ProfileHeader
+		name="Carlos Castro"
+		occupation="IT Enginneer"
+		photo="../src/images/CanguroSelfie.jpg"
+	/>
+	<main class="container">
+		<ProfileSection
+			title="Skills"
+			icon="code"
+			elements={[
+				"HTML",
+				"CSS",
+				"TypeScript",
+				"Python",
+				"Java",
+				"C++",
+				"SQL",
+			]}
+		/>
+		<ProfileSection
+			title="Work Experience"
+			icon="work"
+			elements={[
+				"Leader - CompuLive | 2018 - 2019",
+				"Software Designer - Meta | 2019 - 2020",
+				"Senior Programer - Tesla | 2020 - 2021",
+				"TI Manager - Merche | 2021 - 2023",
+			]}
+		/>
+		<ProfileSection
+			title="Laguages"
+			icon="translate"
+			elements={["Spanish", "English"]}
+		/>
+		<ProfileSection
+			title="Degrees and Certificates"
+			icon="book"
+			elements={[
+				"TI Engineer BUAP",
+				"C++ Introduction SoloLearn",
+				"C++ Intermediate SoloLearn",
+				"HTML Introduction SoloLearn",
+				"Python Introduction SoloLearn",
+				"SQL Introduction SoloLearn",
+			]}
+		/>
+	</main>
+	<ContactFooter
+		email="carlos@example.com"
+		phone="+52 2262782897"
+		github="https://github.com/DracoStorm"
+	/>
+</Layout>

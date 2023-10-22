@@ -1,0 +1,60 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+	@import url("https://fonts.googleapis.com/css?family=Inter|Raleway");
+
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	body {
+		background-color: #1e1e1e;
+		color: whitesmoke;
+		font-family: "Inter", sans-serif;
+		margin: 0 15vw;
+		padding: 5vh 0;
+		border-right: 0.5rem solid whitesmoke;
+		border-left: 0.5rem solid whitesmoke;
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 0 5vw;
+	}
+
+	.title {
+		font-family: "Raleway", sans-serif;
+		font-weight: lighter;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.icons {
+		position: relative;
+		font-size: 1em;
+		top: 0.1em;
+	}
+</style>
